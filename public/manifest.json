@@ -1,0 +1,22 @@
+{
+  "name": "ReliefLens — Disaster Decision Acceleration",
+  "short_name": "ReliefLens",
+  "description": "Tactical AI for disaster response and decision acceleration.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050810",
+  "theme_color": "#00D4FF",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

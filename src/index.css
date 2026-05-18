@@ -1,0 +1,67 @@
+@import '@fontsource/orbitron';
+@import '@fontsource/exo-2';
+@import '@fontsource/jetbrains-mono';
+@import '@fontsource/syne';
+@import '@fontsource/inter';
+@import 'tailwindcss';
+@import './styles/globals.css';
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: #E8F4FD;
+    font-family: 'Exo 2', 'Inter', system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    color: #FFFFFF;
+  }
+
+  h1 {
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.3), 0 0 80px rgba(0, 212, 255, 0.1);
+  }
+
+  h2 {
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.2), 0 0 50px rgba(0, 212, 255, 0.05);
+  }
+
+  h3 {
+    text-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  ::selection {
+    background: rgba(0, 212, 255, 0.3);
+    color: white;
+  }
+
+  a {
+    color: #00D4FF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: #33DDFF;
+  }
+}
