@@ -353,21 +353,19 @@ export async function chatWithGemma(
       const spokenText = extractSpeechOnly(rawSpeech)
       const speechParts = splitIntoFourParts(spokenText)
       
-      return { success: true, extracted, text: spokenText, rawModelText: rawText || JSON.stringify(extracted), speechParts }
+      return { success: true, extracted, text: spokenText }
     }
 
     if (rawText) {
       // Always filter through extractSpeechOnly — never pass raw model output to TTS
       const spokenText = extractSpeechOnly(rawText)
       const speechParts = splitIntoFourParts(spokenText)
-      return { success: true, text: spokenText, rawModelText: rawText, speechParts }
+      return { success: true, text: spokenText }
     }
 
     return {
       success: true,
       text: 'Stay calm. What type of emergency are you facing, and roughly how many people need help?',
-      rawModelText: '',
-      speechParts: splitIntoFourParts('')
     }
 
   } catch (err) {

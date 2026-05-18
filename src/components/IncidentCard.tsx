@@ -225,7 +225,7 @@ export const IncidentCard: React.FC<IncidentCardProps> = ({ incident, onReview, 
         {(() => {
           const displayContacts = incident.contacts && incident.contacts.length > 0
             ? incident.contacts
-            : [{ name: 'State Disaster Management', phone: '1070', roleOrOrganization: 'Official Support' }];
+            : [{ name: 'State Disaster Management', phone: '1070', roleOrOrganization: 'Official Support', email: '', category: 'Official Support' }];
           
           return (
             <div className="flex flex-col gap-2 pt-2 border-t border-white/5">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { X, Mic, Volume2, VolumeX, Terminal, ShieldAlert } from 'lucide-react';
-import { chatWithGemma, extractSpeechOnly } from '@/services/gemma/gemmaClient';
+import { chatWithGemma } from '@/services/gemma/gemmaClient';
 import { speakAsARIA, cancelAriaSpeech } from '@/services/tts/ariaVoiceService';
 import { useIncidentStore } from '@/store/incidentStore';
 import { t } from '@/utils/i18n';

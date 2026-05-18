@@ -9,12 +9,6 @@
  * Both engines check the generation before/after async ops.
  */
 
-const TTS_MODELS = [
-  'gemini-2.5-flash',
-  'gemini-2.0-flash',
-  'gemini-2.5-flash-preview-tts',
-  'gemini-2.0-flash-exp',
-]
 
 let speechGeneration = 0
 let activeAudioContext: AudioContext | null = null

@@ -6,7 +6,6 @@ import { IncidentReportSection } from './components/IncidentReportSection';
 import { IncidentCardList } from './components/IncidentCardList';
 import { CommanderSection } from './components/CommanderSection';
 import { AriaPanel } from './components/AriaPanel';
-import { LocationConfirmModal } from './components/LocationConfirmModal';
 import { getCurrentPosition, getRegionalLanguages, scrapeContactsForLocation } from './services/location/locationService';
 import { getContactsForIncident } from './data/knowledgeBase/contactsData';
 import { RecentDisastersSection } from './components/RecentDisastersSection';
@@ -36,7 +35,6 @@ const INITIAL_INCIDENTS: IncidentCard[] = [
 
 export const App: React.FC = () => {
   const [ariaOpen, setAriaOpen] = useState(false);
-  const [showLocationConfirm, setShowLocationConfirm] = useState(false);
   const [pendingLocation, setPendingLocation] = useState<{ lat: number; lng: number; address?: string; region?: string; country?: string; countryCode?: string } | null>(null);
   
   const { 
@@ -97,24 +95,6 @@ export const App: React.FC = () => {
     return Array.from(unique.values()).slice(0, 8)
   }
 
-  const handleConfirmLocation = () => {
-    if (pendingLocation) {
-      setUserLocation(pendingLocation)
-    }
-    setShowLocationConfirm(false)
-    setPendingLocation(null)
-  }
-
-  const handleManualLocation = (locationText: string) => {
-    setUserLocation({
-      ...(userLocation || pendingLocation || { lat: 0, lng: 0 }),
-      address: locationText,
-      region: locationText,
-    })
-    setShowLocationConfirm(false)
-    setPendingLocation(null)
-  }
-
   const handleIncidentExtracted = async (ext: ExtractedIncidentData) => {
     const incidentId = `inc-${Date.now()}`
     const incidentContacts = ext.contacts || []
@@ -130,7 +110,7 @@ export const App: React.FC = () => {
       what: {
         ...(ext.what || {}),
         incident_type: typeof ext.what?.incident_type === 'string' ? ext.what.incident_type : 'Unknown',
-        damage_scale: typeof ext.what?.damage_scale === 'string' ? ext.what.damage_scale : 'unverified',
+        damage_scale: (typeof ext.what?.damage_scale === 'string' ? ext.what.damage_scale : 'none') as any,
         hazards: Array.isArray(ext.what?.hazards) ? ext.what.hazards.map(String) : (ext.what?.hazards ? [String(ext.what.hazards)] : []),
       },
       where: {
