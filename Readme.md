@@ -36,6 +36,7 @@ ReliefLens acts as an automated, highly intelligent emergency dispatcher that li
 ---
 
 ## 🏗️ Architecture Diagram
+![alt text](<architecture diagram.png>)
 
 ```mermaid
 graph TD
@@ -57,7 +58,7 @@ graph TD
 
 ## 🔄 Workflow
 
-1. **Trigger:** A victim opens the app and presses the "Hold to Speak" button to talk to ARIA.
+1. **Trigger:** A victim opens the app and presses the "Hold to Speak" button to talk to ARIA or they can upload an image or text of the disaster you are going through
 2. **Process:** The voice is transcribed and processed by Gemini Flash models.
 3. **Extract:** Gemini instantly extracts the incident details (type, severity, victims, location).
 4. **Respond:** ARIA speaks back with calm, localized survival instructions in the victim's language.
