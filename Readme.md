@@ -112,5 +112,10 @@ graph TD
 - **Multi-Channel Alerts:** Integrating Twilio or WhatsApp Business APIs for instant SMS/WhatsApp SOS broadcasts.
 
 ---
+## 💡 Gemma 4 model performance in different areas of the project
+
+![alt text](performance_gemma-4.png)
 
 *Built with passion to accelerate decisions and save lives.*
+
+Together we can, with all the capabilities of Gemma 4 model!
